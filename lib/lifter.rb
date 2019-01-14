@@ -31,7 +31,11 @@ class Lifter
   end
 
   def sign_up(gym, cost)
-    Membership.new(cost, self, gym)
+    if self.gyms.include?(gym)
+      puts "This Lifter is already a Member of this Gym!"
+    else
+      Membership.new(cost, self, gym)
+    end
   end
 
 end
