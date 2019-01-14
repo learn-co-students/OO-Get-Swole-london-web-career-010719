@@ -1,7 +1,23 @@
-class Membership
-  attr_reader :cost
+# central class
+# a membership is initialized with a cost and the gym that it belongs to
 
-  def initialize(cost)
+
+class Membership
+  attr_reader :cost, :gym, :lifter
+
+  @@all = []
+
+  def initialize(cost, gym, lifter)
     @cost = cost
+    @gym = gym
+    @lifter = lifter
+    @@all << self
   end
+
+
+  def self.all
+    @@all
+  end
+
+
 end
